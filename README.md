@@ -7,7 +7,7 @@
 
 > A modern, dark-themed developer portfolio featuring a Bento Grid layout, smooth entrance animations, and a responsive glassmorphism UI.
 
-🔗 **Live Demo:** [View Portfolio](https://portfolio-ldzp3vban-kaveris-projects-05989914.vercel.app/)
+🔗 **Live Demo:** [View Portfolio](https://portfolio-kaverii11.vercel.app/)
 
 ---
 
