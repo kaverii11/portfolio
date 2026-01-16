@@ -28,8 +28,8 @@
 - **Deployment:** [Vercel](https://vercel.com/)
 
 ## 📂 Project Structure
-Bash
 
+```bash
 ├── app/
 │   ├── layout.tsx      # Main layout wrapper
 │   ├── page.tsx        # Main portfolio content (Data & Components)
@@ -37,6 +37,7 @@ Bash
 ├── public/
 │   └── resume.pdf      # Downloadable resume file
 └── tailwind.config.ts  # Tailwind configuration
+```
 
 ## 📬 Contact
 **Name:** Kaveri Sharma
