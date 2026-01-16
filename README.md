@@ -7,7 +7,7 @@
 
 > A modern, dark-themed developer portfolio featuring a Bento Grid layout, smooth entrance animations, and a responsive glassmorphism UI.
 
-🔗 **Live Demo:** [View Portfolio](https://portfolio-ldzp3vban-kaveris-projects-05989914.vercel.app/)
+🔗 **Live Demo:** [View Portfolio](https://portfolio-kaverii11.vercel.app/)
 
 ---
 
@@ -28,8 +28,8 @@
 - **Deployment:** [Vercel](https://vercel.com/)
 
 ## 📂 Project Structure
-Bash
 
+```bash
 ├── app/
 │   ├── layout.tsx      # Main layout wrapper
 │   ├── page.tsx        # Main portfolio content (Data & Components)
@@ -37,6 +37,7 @@ Bash
 ├── public/
 │   └── resume.pdf      # Downloadable resume file
 └── tailwind.config.ts  # Tailwind configuration
+```
 
 ## 📬 Contact
 **Name:** Kaveri Sharma
