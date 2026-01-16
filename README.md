@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡️ Kaveri Sharma | Personal Portfolio
 
-## Getting Started
+![Portfolio Vibe](https://img.shields.io/badge/Style-Glassmorphism-blueviolet?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)
 
-First, run the development server:
+> A modern, dark-themed developer portfolio featuring a Bento Grid layout, smooth entrance animations, and a responsive glassmorphism UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔗 **Live Demo:** [View Portfolio](https://portfolio-ldzp3vban-kaveris-projects-05989914.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Cyber-Slate Aesthetic:** Dark mode by default with glowing gradients and glassmorphism cards.
+- **Bento Grid Layout:** A trendy, modular design that organizes content efficiently.
+- **Smooth Animations:** Powered by **Framer Motion** for staggered entrance effects and hover interactions.
+- **Fully Responsive:** optimized for mobile, tablet, and desktop screens using **Tailwind CSS**.
+- **Type-Safe:** Built with **TypeScript** for robust code quality.
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
+Bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+├── app/
+│   ├── layout.tsx      # Main layout wrapper
+│   ├── page.tsx        # Main portfolio content (Data & Components)
+│   └── globals.css     # Tailwind imports and global styles
+├── public/
+│   └── resume.pdf      # Downloadable resume file
+└── tailwind.config.ts  # Tailwind configuration
 
-## Deploy on Vercel
+## 📬 Contact
+**Name:** Kaveri Sharma
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Email:** kaveri05sharma@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**GitHub:** kaverii11
+
+**LinkedIn:** Kaveri Sharma
+
+**© 2026 Kaveri Sharma. Built with 💜 and Next.js.**
