@@ -31,7 +31,6 @@ const projects = [
     tag: "Deep Learning & NLP",
     description: "A content-based recommendation engine using SBERT (Sentence-BERT) to understand semantic similarity in movie plots.",
     tech: ["Python", "Streamlit", "BERT", "Scikit-Learn", "TMDB API"],
-    // ADDED LINK HERE
     link: "https://github.com/kaverii11/movieflix-ai",
     icon: <Cpu className="w-6 h-6 text-purple-400" />
   },
@@ -40,7 +39,6 @@ const projects = [
     tag: "Computer Vision & ML",
     description: "Replication of Stanford research to automate inventory counting in storage bins. Implements both SVM baselines and Deep Learning approaches.",
     tech: ["PyTorch", "ResNet18/34", "GCS", "SVM", "Python"],
-    // ADDED LINK HERE
     link: "https://github.com/kaverii11/amazon_inventory",
     icon: <Code2 className="w-6 h-6 text-orange-400" />
   },
@@ -49,7 +47,7 @@ const projects = [
     tag: "Database Systems",
     description: "A database-driven mentorship platform featuring role-based access and smart search. Uses Stored Procedures for filtering.",
     tech: ["MySQL", "Streamlit", "Stored Procedures", "Triggers", "3NF"],
-    link: "https://github.com/kaverii11/Student-Alumni-Mentorship-Portal"
+    link: "https://github.com/kaverii11/Student-Alumni-Mentorship-Portal",
     icon: <Database className="w-6 h-6 text-emerald-400" />
   },
   {
@@ -57,7 +55,7 @@ const projects = [
     tag: "Software Engineering",
     description: "Engineered a GDPR-compliant CRM using Flask & Firestore. Implemented RBAC, JWT Auth, and achieved 99.9% uptime with micro-services.",
     tech: ["Flask", "Firebase", "Bandit", "Pytest"],
-    link: "https://github.com/kaverii11/CRM-APP-CLONE"
+    link: "https://github.com/kaverii11/CRM-APP-CLONE",
     icon: <Shield className="w-6 h-6 text-cyan-400" />
   },
   {
@@ -158,45 +156,45 @@ export default function Portfolio() {
           </motion.div>
 
           {projects.map((project, index) => (
-  <motion.div 
-    key={index} 
-    variants={itemVariants}
-    whileHover={{ y: -5 }}
-    className="md:col-span-6 lg:col-span-4 p-6 rounded-3xl bg-slate-900/30 border border-slate-800 hover:bg-slate-900/60 hover:border-cyan-900/50 transition-all group flex flex-col"
-  >
-    <div className="flex justify-between items-start mb-4">
-      <div className="p-3 rounded-2xl bg-slate-950 border border-slate-800 group-hover:border-cyan-900/50 transition-colors">
-        {project.icon}
-      </div>
-      
-      {/* ONLY SHOW BUTTON IF LINK EXISTS */}
-      {project.link && (
-        <a 
-          href={project.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="p-2 rounded-full hover:bg-slate-800 transition-colors"
-        >
-          <ExternalLink className="w-5 h-5 text-slate-600 group-hover:text-cyan-400 transition-colors" />
-        </a>
-      )}
-    </div>
-    
-    <h3 className="text-xl font-bold text-slate-200 mb-1">{project.title}</h3>
-    <p className="text-xs font-mono text-cyan-500 mb-3">{project.tag}</p>
-    <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
-      {project.description}
-    </p>
-    
-    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-800/50">
-      {project.tech.map((t, i) => (
-        <span key={i} className="text-[10px] text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-900">
-          {t}
-        </span>
-      ))}
-    </div>
-  </motion.div>
-))}
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="md:col-span-6 lg:col-span-4 p-6 rounded-3xl bg-slate-900/30 border border-slate-800 hover:bg-slate-900/60 hover:border-cyan-900/50 transition-all group flex flex-col"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 rounded-2xl bg-slate-950 border border-slate-800 group-hover:border-cyan-900/50 transition-colors">
+                  {project.icon}
+                </div>
+                
+                {/* ONLY SHOW BUTTON IF LINK EXISTS */}
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-slate-800 transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5 text-slate-600 group-hover:text-cyan-400 transition-colors" />
+                  </a>
+                )}
+              </div>
+              
+              <h3 className="text-xl font-bold text-slate-200 mb-1">{project.title}</h3>
+              <p className="text-xs font-mono text-cyan-500 mb-3">{project.tag}</p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-800/50">
+                {project.tech.map((t, i) => (
+                  <span key={i} className="text-[10px] text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-900">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
           
           {/* CONTACT SECTION */}
           <motion.div variants={itemVariants} className="md:col-span-12 mt-12">
