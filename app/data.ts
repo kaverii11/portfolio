@@ -7,11 +7,11 @@ export const personalInfo = {
   taglines: [
     "Full-Stack Developer",
     "AI / ML Engineer",
-    "GovTech Builder",
+    "Agentic Systems Builder",
     "2nd Place @ AMD Slingshot Challenge",
   ],
   about:
-    "B.Tech Computer Science student at PES University, building systems at the intersection of data engineering, applied ML, and full-stack development — from GPU-accelerated GovTech tools to AI-driven customer support platforms.",
+    "B.Tech Computer Science student at PES University, building systems at the intersection of data engineering, applied ML, and full-stack development — from AI agents that reconcile trades and route support tickets, to GovTech logistics tools and clinical risk models.",
 };
 
 export const education = {
@@ -77,13 +77,13 @@ export const featuredProjects = [
     tag: "GovTech · Geospatial AI",
     color: "orange",
     description:
-      "A GovTech spatial logistics engine using AMD-accelerated graph routing across 300,000+ street nodes to minimize urban inequality (Spatial Gini Coefficient) — 4,064x faster than a CPU baseline.",
+      "A GovTech engine that measures how fairly public facilities are distributed across a city using real Dijkstra shortest-path routing over live geospatial street maps — not straight-line estimates — across a 300,000+ node Bengaluru street network.",
     points: [
-      "Accelerated computations 4,064x (14 hrs → 12 sec) on AMD ROCm GPUs.",
+      "Multi-source Dijkstra routing (NetworkX/OSMnx) to quantify facility-access inequality, plus a global search that can simulate any city worldwide via OpenStreetMap geocoding.",
       "Replaced outdated census data with Sentinel-2 satellite imagery + OpenStreetMap to map informal settlements using true walkable street distances.",
-      "Live React dashboard with 5-second GPU-accelerated re-optimization (8.5x faster than CPU) — generalized beyond schools to healthcare, fire stations, and warehouse siting.",
+      "Live dashboard where recommended facility placements respect a real budget cap (₹10–150 Cr) and target the most underserved areas first — generalized beyond schools to healthcare, fire stations, and warehouses.",
     ],
-    tech: ["Python", "React", "AMD ROCm", "Sentinel-2", "OpenStreetMap"],
+    tech: ["Python", "React", "FastAPI", "NetworkX", "GeoPandas", "OpenStreetMap"],
     link: "https://github.com/kaverii11/Spatial-Engine",
     private: false,
     badge: "🏆 2nd, AMD Slingshot Challenge",
@@ -96,30 +96,47 @@ export const featuredProjects = [
     description:
       "A 3-tier customer support orchestration platform routing tickets across auto-resolve, AI-assisted, and escalate tiers based on AI confidence scores and real-time sentiment analysis.",
     points: [
-      "RAG pipeline (ChromaDB, Groq Llama 3.3 for drafts, SambaNova/Llama 3.1 for sentiment) with a human-in-the-loop engine updating the knowledge base from agent corrections — 30–40% reduction in MTTR.",
-      "Built a pre-submission 'Gatekeeper' layer that analyzes drafts in real time and suggests fixes before ticket creation — 20–30% ticket deflection.",
+      "RAG pipeline (ChromaDB + SentenceTransformer embeddings, Groq Llama 3.3 for drafts, SambaNova/Llama 3.1 for sentiment) with a human-in-the-loop engine updating the knowledge base from agent corrections — 30–40% reduction in MTTR.",
+      "Applied the same confidence-threshold model to pre-submission drafts, surfacing fix suggestions to the customer before a ticket is even created.",
     ],
-    tech: ["React", "FastAPI", "LangChain", "ChromaDB", "Groq", "SambaNova"],
+    tech: ["React", "FastAPI", "ChromaDB", "Groq", "SambaNova"],
     link: "https://github.com/kaverii11/Optisolve",
     private: false,
     badge: "Shortlisted, Atos SRiJAN Hackathon",
   },
   {
-    title: "Digital Twin",
-    subtitle: "Heart Failure Decompensation Prediction",
-    tag: "Health Tech · Simulation",
+    title: "BreakRadar",
+    subtitle: "Trade-Break Reconciliation Engine",
+    tag: "Agentic Systems · FinTech",
+    color: "blue",
+    description:
+      "A reconciliation engine that catches and prioritizes errors before they become financial risk — agents that act autonomously, not a dashboard someone has to babysit.",
+    points: [
+      "Reconciles two independent trade feeds, auto-classifies mismatches into 5 break types, and scores severity from real-time $ exposure with asset-class-tuned tolerance thresholds.",
+      "Rule-based escalation engine routes high-risk breaks to human review with an auto-generated justification, and logs a timestamped audit trail for every auto-resolved case — nothing closes without a traceable reason.",
+      "Live KRI dashboard (total $ exposure, breaks by type, case aging) where an LLM (Groq) translates each deterministic verdict into a plain-English explanation.",
+    ],
+    tech: ["Python", "FastAPI", "Groq"],
+    link: "https://github.com/kaverii11/BreakRadar",
+    private: false,
+    badge: "Built solo, end-to-end",
+  },
+  {
+    title: "HeartGuard AI",
+    subtitle: "Personalized Digital Twin for Heart Failure",
+    tag: "Health Tech · Data Science",
     color: "purple",
     description:
-      "A heart-failure decompensation monitoring system integrating the Kitware Pulse physiology simulation engine, translating patient vitals into simulated trajectories via a rule-based clinical triage layer.",
+      "A multimodal deterioration-monitoring pipeline (ECG, BCG, echocardiography, wearable trends) built around the Pulse physiology simulation engine — a 7-model pipeline spanning simulation, severity scoring, and deterioration classification.",
     points: [
-      "Interpretable HF staging and risk-scoring model (LOW/MODERATE/HIGH across NYHA stages A–D) — chose a hand-tuned weighted scorer over a black-box XGBoost model, plus 7/14/30-day risk forecasting.",
-      "Engineered a synthetic data pipeline from clinical literature and wearable trend regimes, prioritizing high recall to minimize missed high-risk cases.",
-      "Currently authoring a research paper formalizing this methodology for peer-reviewed publication.",
+      "Interpretable HF staging and risk-scoring model (LOW/MODERATE/HIGH across NYHA stages A–D) — chose a hand-tuned weighted scorer over a black-box model, plus 7/14/30-day risk forecasting.",
+      "Diagnosed and fixed a scoring-logic defect that was silently inflating severity error, cutting MAE 34x (0.271 → 0.008) after root-causing it against real-patient validation data (16/16 correct classifications).",
+      "Validated the risk mechanism against real outcomes across 17,129 MIMIC-IV ICU admissions (Google BigQuery) plus an independent cohort, benchmarking against richer clinical models to identify missing data signals.",
     ],
-    tech: ["Python", "Docker", "XGBoost", "Kitware Pulse"],
+    tech: ["Python", "Docker", "BigQuery", "Kitware Pulse"],
     link: "https://github.com/Mrunmayi019/M2K-HF-PULSE",
     private: true,
-    badge: "Research paper in progress",
+    badge: "Capstone — publication in progress",
   },
 ];
 

@@ -29,6 +29,13 @@ const colorMap: Record<string, { border: string; text: string; dot: string; chip
     chip: "bg-purple-950/50 border-purple-900 text-purple-300",
     glow: "bg-purple-500/10",
   },
+  blue: {
+    border: "border-sky-900/60 hover:border-sky-500/50",
+    text: "text-sky-300",
+    dot: "bg-sky-300",
+    chip: "bg-sky-950/50 border-sky-900 text-sky-300",
+    glow: "bg-sky-500/10",
+  },
 };
 
 export default function Projects() {
@@ -39,13 +46,9 @@ export default function Projects() {
       <div className="grid md:grid-cols-2 gap-6 mt-10">
         {featuredProjects.map((p, i) => {
           const c = colorMap[p.color];
-          const direction = p.title === "Digital Twin" ? "up" : i % 2 === 0 ? "left" : "right";
+          const direction = i % 2 === 0 ? "left" : "right";
           return (
-            <Reveal
-              key={p.title}
-              direction={direction}
-              className={p.title === "Digital Twin" ? "md:col-span-2" : ""}
-            >
+            <Reveal key={p.title} direction={direction}>
               <TiltCard
                 className={`h-full p-7 rounded-3xl bg-slate-900/50 border ${c.border} backdrop-blur-sm transition-colors`}
               >
