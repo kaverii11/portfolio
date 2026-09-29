@@ -9,7 +9,7 @@ import Reveal from "./Reveal";
 export default function Achievements() {
   return (
     <section id="achievements" className="relative z-10 max-w-5xl mx-auto px-6 py-20">
-      <SectionHeading index="03" title="Achievements" />
+      <SectionHeading index="02" title="Achievements" />
 
       <div className="grid md:grid-cols-2 gap-6 mt-10">
         {achievements.map((a, i) => (

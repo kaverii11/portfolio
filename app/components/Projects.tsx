@@ -41,7 +41,7 @@ const colorMap: Record<string, { border: string; text: string; dot: string; chip
 export default function Projects() {
   return (
     <section id="projects" className="relative z-10 max-w-5xl mx-auto px-6 py-20">
-      <SectionHeading index="04" title="Featured Projects" />
+      <SectionHeading index="03" title="Featured Projects" />
 
       <div className="grid md:grid-cols-2 gap-6 mt-10">
         {featuredProjects.map((p, i) => {

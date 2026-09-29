@@ -22,9 +22,9 @@ export default function Portfolio() {
       <main className="relative">
         <Hero />
         <About />
-        <Experience />
         <Achievements />
         <Projects />
+        <Experience />
         <Skills />
         <Leadership />
         <Contact />

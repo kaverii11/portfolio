@@ -6,10 +6,11 @@ import { Menu, X, Download } from "lucide-react";
 
 const links = [
   { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
   { id: "achievements", label: "Achievements" },
-  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Tech Stack" },
+  { id: "leadership", label: "Leadership" },
   { id: "contact", label: "Contact" },
 ];
 

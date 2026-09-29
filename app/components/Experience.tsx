@@ -9,7 +9,7 @@ import Reveal from "./Reveal";
 export default function Experience() {
   return (
     <section id="experience" className="relative z-10 max-w-5xl mx-auto px-6 py-20">
-      <SectionHeading index="02" title="Experience" />
+      <SectionHeading index="04" title="Experience" />
 
       <div className="mt-10 relative pl-8 md:pl-10">
         <div className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-gradient-to-b from-pink-400/60 via-slate-700 to-transparent" />

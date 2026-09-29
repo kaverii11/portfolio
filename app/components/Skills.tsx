@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 export default function Skills() {
   return (
     <section id="skills" className="relative z-10 max-w-5xl mx-auto px-6 py-20">
-      <SectionHeading index="05" title="Skills" />
+      <SectionHeading index="05" title="Tech Stack" />
 
       <div className="grid md:grid-cols-2 gap-5 mt-10">
         {skillGroups.map((group, i) => {
