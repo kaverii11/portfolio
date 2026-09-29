@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { id: "about", label: "About" },
@@ -78,15 +78,6 @@ export default function Nav() {
             ))}
           </ul>
 
-          <a
-            href="/resume.pdf"
-            download="Kaveri_Sharma_Resume.pdf"
-            data-hover
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-400 text-slate-950 text-sm font-semibold hover:bg-pink-300 transition-colors"
-          >
-            <Download size={15} /> Resume
-          </a>
-
           <button
             data-hover
             onClick={() => setOpen((o) => !o)}
@@ -116,14 +107,6 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              download="Kaveri_Sharma_Resume.pdf"
-              onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-pink-400 text-slate-950 font-semibold"
-            >
-              <Download size={16} /> Resume
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
