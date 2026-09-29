@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
 import { personalInfo } from "../data";
 
 function useTypewriter(words: string[]) {
@@ -66,7 +66,7 @@ export default function Hero() {
           {personalInfo.about}
         </p>
 
-        <div className="mt-9 flex items-center justify-center gap-4">
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
             data-hover
@@ -80,6 +80,14 @@ export default function Hero() {
             className="px-6 py-3 rounded-full border border-slate-700 text-slate-200 font-medium hover:border-pink-400/60 hover:text-pink-300 transition-colors"
           >
             Get in touch
+          </a>
+          <a
+            href="/resume.pdf"
+            download="Kaveri_Sharma_Resume.pdf"
+            data-hover
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-pink-400 text-slate-950 font-semibold hover:bg-pink-300 transition-transform hover:scale-105"
+          >
+            <Download size={17} /> Resume
           </a>
         </div>
 
