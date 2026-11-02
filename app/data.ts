@@ -180,7 +180,7 @@ export const moreProjects = [
     title: "Marine Debris Detection",
     tag: "Deep Learning · Satellite Imagery",
     description:
-      "Adapted an ImageNet-pretrained ResNet-18 to 11-band Sentinel-2 imagery (MARIDA) by rebuilding the first conv layer, with Grad-CAM heatmaps implemented from scratch.",
+      "ResNet-18 adapted to 11-band Sentinel-2 satellite images (MARIDA): 87% test accuracy vs a 72% baseline, debris F1 0.78, with Grad-CAM showing it focuses on the debris lines.",
     tech: ["PyTorch", "torchvision", "rasterio", "Grad-CAM"],
     link: "https://github.com/kaverii11/marine-debris_cnn",
   },
@@ -188,8 +188,8 @@ export const moreProjects = [
     title: "Fire Detection CNN",
     tag: "Computer Vision",
     description:
-      "A CNN trained on 999 images with data augmentation (rotation, shift, shear, zoom, flips), reaching 95% validation accuracy.",
-    tech: ["TensorFlow", "Keras", "CNN"],
+      "Fire vs non-fire photos: a pretrained MobileNetV2 reaches 97% test accuracy and a CNN built from scratch 94%, vs a 75% baseline, with augmentation and class weights.",
+    tech: ["TensorFlow", "Keras", "MobileNetV2", "Transfer Learning"],
     link: "https://github.com/kaverii11/forrest_fire_detection",
   },
   {
@@ -204,7 +204,7 @@ export const moreProjects = [
     title: "Amazon Inventory AI",
     tag: "Computer Vision & ML",
     description:
-      "Replication of Stanford research to count items in Amazon bin photos — SVMs on hand-crafted features (HOG, blob detection, PCA via OpenCV) vs fine-tuned ResNet-18/34.",
+      "Solo replication of Stanford research to count items in Amazon bin photos — SVMs on hand-crafted features (HOG, blob detection, PCA via OpenCV) vs fine-tuned ResNet-18/34.",
     tech: ["PyTorch", "OpenCV", "ResNet18/34", "GCS", "SVM"],
     link: "https://github.com/kaverii11/amazon_inventory",
   },
