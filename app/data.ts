@@ -56,16 +56,16 @@ export const achievements = [
     ],
   },
   {
-    title: "Shortlisted",
+    title: "Finalist",
     org: "Atos SRiJAN Hackathon",
-    period: "May 2026",
-    stat: "Top",
-    statLabel: "among 500+ participants",
+    period: "Sep 2026",
+    stat: "Top 5",
+    statLabel: "finalist teams",
     detail:
-      "Ranked among winning teams out of 500+ participants, earning direct internship consideration for building a customer support orchestration platform — OptiSolve.",
+      "1 of only 5 finalist teams (2 university teams, the rest startups) for OptiSolve, a customer support orchestration platform. Pitched to Atos UKI & India leadership, who showed interest in adoption and internship consideration.",
     metrics: [
-      { value: "500+", label: "Participants" },
-      { value: "Direct", label: "Internship consideration" },
+      { value: "Top 5", label: "Finalist teams" },
+      { value: "UKI & India", label: "Leadership pitch" },
     ],
   },
 ];
@@ -94,21 +94,56 @@ export const featuredProjects = [
     tag: "Applied AI · RAG",
     color: "pink",
     description:
-      "A 3-tier customer support orchestration platform routing tickets across auto-resolve, AI-assisted, and escalate tiers based on AI confidence scores and real-time sentiment analysis.",
+      "A RAG support-ticket platform that scores its confidence in every answer from knowledge-base match strength and LLM sentiment analysis, then routes the ticket: Tier 1 auto-resolves, Tier 2 goes to human-in-the-loop review, Tier 3 escalates.",
     points: [
-      "RAG pipeline (ChromaDB + SentenceTransformer embeddings, Groq Llama 3.3 for drafts, SambaNova/Llama 3.1 for sentiment) with a human-in-the-loop engine updating the knowledge base from agent corrections — 30–40% reduction in MTTR.",
-      "Applied the same confidence-threshold model to pre-submission drafts, surfacing fix suggestions to the customer before a ticket is even created.",
+      "Self-learning loop: every human correction is saved back into the knowledge base, so similar tickets later auto-resolve — it learns from each company's own documents and agents, so it adapts to any platform in any sector.",
+      "OptiSolve-Docs extension: a document-parsing pipeline (PDF/DOCX/TXT) plus a cross-encoder reranker that re-scores retrieved chunks.",
+      "Evaluated on a held-out set: auto-resolves on document-only questions went from 0 to 3 of 6, with zero wrong auto-resolves on 27 near-topic and off-topic questions; backed by 19 unit tests.",
     ],
-    tech: ["React", "FastAPI", "ChromaDB", "Groq", "SambaNova"],
-    link: "https://github.com/kaverii11/Optisolve",
+    tech: ["Python", "FastAPI", "React", "ChromaDB", "Groq"],
+    link: "https://github.com/kaverii11/optisolve-docs",
     private: false,
-    badge: "Shortlisted, Atos SRiJAN Hackathon",
+    badge: "Finalist, Atos SRiJAN Hackathon",
+  },
+  {
+    title: "SEBI Knowledge Graph Agent",
+    subtitle: "Regulatory PDFs to a Queryable Knowledge Graph",
+    tag: "Agentic AI · Document AI",
+    color: "blue",
+    description:
+      "Turns unstructured SEBI regulatory circulars into a Neo4j knowledge graph of circulars, clauses, and the acts and regulations they reference or modify — then answers compliance questions in plain English.",
+    points: [
+      "LangGraph pipeline: a regex catches standard circular IDs, GPT-4o-mini extracts the rest as Pydantic-validated structured output, and a validation step re-routes anything below 0.7 confidence to GPT-4o.",
+      "Chunks PDFs by their own clause structure with surrounding context; scanned PDFs are rendered to images and read by GPT-4o vision.",
+      "Text-to-Cypher Q&A that injects the live graph inventory into the prompt and runs only read-only queries; duplicate entities are merged by embedding cosine similarity; precision/recall/F1 eval script.",
+    ],
+    tech: ["Python", "LangGraph", "OpenAI", "Neo4j", "Streamlit"],
+    link: "https://github.com/kaverii11/Knowledge-Graph-Agent-",
+    private: false,
+    badge: "Built solo, end-to-end",
+  },
+  {
+    title: "Aymora",
+    subtitle: "AI Matchmaking App",
+    tag: "Full Stack · Backend",
+    color: "orange",
+    description:
+      "A deployed AI matchmaking app: Gemini turns questionnaire answers into a structured profile and an embedding, and users are matched by vector similarity plus rule-based re-ranking.",
+    points: [
+      "TypeScript/Fastify backend with 12 SQL migrations and Zod validation; truncated the 3072-dim (Matryoshka) Gemini embeddings to 768 to fit pgvector's ivfflat index limit.",
+      "Two-stage matching — pgvector cosine-similarity candidates, then rule-based re-ranking — run as BullMQ background jobs on Redis with retries and exponential backoff.",
+      "Razorpay payments with HMAC-SHA256 webhook signature verification, rate limiting, OTP attempt limits, moderation, and data deletion; deployed on Render + Supabase.",
+    ],
+    tech: ["TypeScript", "Fastify", "PostgreSQL", "pgvector", "Redis", "Gemini"],
+    link: "https://github.com/kaverii11/aymora",
+    private: false,
+    badge: "Built solo, deployed",
   },
   {
     title: "BreakRadar",
     subtitle: "Trade-Break Reconciliation Engine",
     tag: "Agentic Systems · FinTech",
-    color: "blue",
+    color: "pink",
     description:
       "A reconciliation engine that catches and prioritizes errors before they become financial risk — agents that act autonomously, not a dashboard someone has to babysit.",
     points: [
@@ -129,11 +164,11 @@ export const featuredProjects = [
     description:
       "A multimodal deterioration-monitoring pipeline (ECG, BCG, echocardiography, wearable trends) built around the Pulse physiology simulation engine — a 7-model pipeline spanning simulation, severity scoring, and deterioration classification.",
     points: [
-      "Interpretable HF staging and risk-scoring model (LOW/MODERATE/HIGH across NYHA stages A–D) — chose a hand-tuned weighted scorer over a black-box model, plus 7/14/30-day risk forecasting.",
-      "Diagnosed and fixed a scoring-logic defect that was silently inflating severity error, cutting MAE 34x (0.271 → 0.008) after root-causing it against real-patient validation data (16/16 correct classifications).",
-      "Validated the risk mechanism against real outcomes across 17,129 MIMIC-IV ICU admissions (Google BigQuery) plus an independent cohort, benchmarking against richer clinical models to identify missing data signals.",
+      "A personalized digital twin that follows each patient's daily vitals in a continuous loop: a Random Forest classifier sorts each day into 5 clinical scenarios at 91.3% held-out accuracy, a severity regressor sets intensity, and the Pulse engine simulates that patient's heart to produce a risk score (low/moderate/high), a 4-stage NYHA class (I–IV), and a forward projection.",
+      "Diagnosed and fixed a scoring-logic defect that was silently inflating severity error, cutting MAE 34x (0.271 → 0.008).",
+      "Validated the risk mechanism against real outcomes across 17,129 MIMIC-IV admissions (Google BigQuery) plus an independent cohort, benchmarking against richer clinical models to identify missing data signals.",
     ],
-    tech: ["Python", "Docker", "BigQuery", "Kitware Pulse"],
+    tech: ["Python", "Scikit-learn", "XGBoost", "Docker", "BigQuery", "Kitware Pulse"],
     link: "https://github.com/Mrunmayi019/M2K-HF-PULSE",
     private: true,
     badge: "Capstone — publication in progress",
@@ -141,6 +176,22 @@ export const featuredProjects = [
 ];
 
 export const moreProjects = [
+  {
+    title: "Marine Debris Detection",
+    tag: "Deep Learning · Satellite Imagery",
+    description:
+      "Adapted an ImageNet-pretrained ResNet-18 to 11-band Sentinel-2 imagery (MARIDA) by rebuilding the first conv layer, with Grad-CAM heatmaps implemented from scratch.",
+    tech: ["PyTorch", "torchvision", "rasterio", "Grad-CAM"],
+    link: "https://github.com/kaverii11/marine-debris_cnn",
+  },
+  {
+    title: "Fire Detection CNN",
+    tag: "Computer Vision",
+    description:
+      "A CNN trained on 999 images with data augmentation (rotation, shift, shear, zoom, flips), reaching 95% validation accuracy.",
+    tech: ["TensorFlow", "Keras", "CNN"],
+    link: "https://github.com/kaverii11/forrest_fire_detection",
+  },
   {
     title: "Movieflix AI",
     tag: "Deep Learning & NLP",
@@ -153,8 +204,8 @@ export const moreProjects = [
     title: "Amazon Inventory AI",
     tag: "Computer Vision & ML",
     description:
-      "Replication of Stanford research to automate inventory counting in storage bins — SVM baselines plus deep learning approaches.",
-    tech: ["PyTorch", "ResNet18/34", "GCS", "SVM"],
+      "Replication of Stanford research to count items in Amazon bin photos — SVMs on hand-crafted features (HOG, blob detection, PCA via OpenCV) vs fine-tuned ResNet-18/34.",
+    tech: ["PyTorch", "OpenCV", "ResNet18/34", "GCS", "SVM"],
     link: "https://github.com/kaverii11/amazon_inventory",
   },
   {
@@ -166,10 +217,10 @@ export const moreProjects = [
     link: "https://github.com/kaverii11/Student-Alumni-Mentorship-Portal",
   },
   {
-    title: "Secure CRM Platform",
+    title: "CRM Platform",
     tag: "Software Engineering",
     description:
-      "A GDPR-compliant CRM built with Flask & Firestore — RBAC, JWT auth, 99.9% uptime with micro-services.",
+      "A team CRM for sales and support with role-based login; I built the ticket API (validation, 24-hour SLA deadlines, logging). Shipped in Jira-tracked sprints with CI running tests, linting, and security scans on every PR.",
     tech: ["Flask", "Firebase", "Bandit", "Pytest"],
     link: "https://github.com/kaverii11/CRM-APP-CLONE",
   },
@@ -182,19 +233,19 @@ export const skillGroups = [
   },
   {
     label: "Data & ML",
-    skills: ["PyTorch", "Keras", "TensorFlow", "Pandas", "NumPy", "Scikit-learn"],
+    skills: ["PyTorch", "Keras", "TensorFlow", "OpenCV", "Scikit-learn", "XGBoost", "Pandas", "NumPy"],
   },
   {
     label: "Full Stack & App Integration",
-    skills: ["Next.js", "React", "REST APIs", "JSON", "Data Visualization"],
+    skills: ["Next.js", "React", "FastAPI", "Fastify", "Node.js", "REST APIs", "Data Visualization"],
   },
   {
     label: "Tools & Databases",
-    skills: ["MySQL", "Firebase Firestore", "Git / GitHub", "Docker"],
+    skills: ["PostgreSQL", "pgvector", "Neo4j", "Redis", "MySQL", "Firebase Firestore", "Git / GitHub", "Docker"],
   },
   {
     label: "Generative AI & NLP",
-    skills: ["LLMs", "RAG", "NLP", "Prompt Engineering", "Hugging Face"],
+    skills: ["LLMs", "RAG", "LangGraph", "Embeddings", "NLP", "Prompt Engineering", "Hugging Face"],
   },
 ];
 
