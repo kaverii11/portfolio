@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kaveri Sharma — CS Student & AI/ML Builder",
+  title: "Kaveri Sharma",
   description:
-    "Kaveri Sharma — B.Tech CS student at PES University. Builder of CityOS, OptiSolve, and GovTech data systems. 2nd place, AMD Slingshot Challenge.",
+    "Kaveri Sharma, final-year CS student at PES University, Bengaluru. Builds AI agents and backends: SEBI knowledge-graph agent (MCP), Aymora, CityOS (2nd, AMD Slingshot), OptiSolve. Open to Jan-Jun 2027 internships.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         {children}
       </body>

@@ -14,7 +14,7 @@ const variants = {
     visible: { opacity: 1, x: 0, rotate: 0 },
   },
   up: {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0 },
   },
   scale: {
@@ -38,7 +38,7 @@ export default function Reveal({
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
       variants={variants[direction]}
-      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}

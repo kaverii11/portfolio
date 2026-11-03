@@ -281,3 +281,23 @@ export const leadership = [
       "Researched trending topics and designed engaging challenge formats for hackathons, and curated messaging, headlines, and speeches for club events.",
   },
 ];
+
+// ---- Minimal layout (Nov 2026) ----
+export const resumeGame = "https://kaverii11.github.io/resume-gamified/";
+
+// Short facts the hero cycles through. Every number here is also on the resume.
+export const heroFacts = [
+  { text: "I build AI agents and the backends that run them.", link: null },
+  { text: "I placed 2nd nationally out of 40,000+ registrations at the AMD Slingshot Challenge with ", link: { label: "CityOS", href: "https://github.com/kaverii11/Spatial-Engine" } },
+  { text: "I built a knowledge-graph agent for SEBI regulations that other AI agents can query over ", link: { label: "MCP", href: "https://github.com/kaverii11/Knowledge-Graph-Agent-" } },
+  { text: "Our team was 1 of 5 finalists at the Atos SRiJAN Hackathon with ", link: { label: "OptiSolve", href: "https://github.com/kaverii11/optisolve-docs" } },
+  { text: "My resume is also a pixel-art town you can ", link: { label: "walk around in", href: "https://kaverii11.github.io/resume-gamified/" } },
+];
+
+// Featured projects, in order, with the one number that sums each up.
+export const featuredOrder: { title: string; metric: string; metricLabel: string }[] = [
+  { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught" },
+  { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend" },
+  { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)" },
+  { title: "OptiSolve", metric: "0 / 27", metricLabel: "wrong auto-replies on near-topic and off-topic questions" },
+];
