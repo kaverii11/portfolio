@@ -14,7 +14,7 @@ export default function NameReveal({ children }: { children: React.ReactNode }) 
   const y = useSpring(my, { stiffness: 260, damping: 22 });
 
   // Fetch the photo up front so it's already there on the first hover
-  useEffect(() => { const img = new window.Image(); img.src = "/kaveri.webp"; }, []);
+  useEffect(() => { const img = new window.Image(); img.src = "/kaveri-bw.webp"; }, []);
 
   // On touch screens a tap shows the card; it tucks itself away again after a few seconds
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function NameReveal({ children }: { children: React.ReactNode }) 
             className="pointer-events-none absolute left-0 top-full mt-4 md:left-full md:top-1/2 md:ml-5 md:-mt-[128px] z-20 block w-[160px] md:w-[176px] rounded-2xl bg-white p-2 pb-3 shadow-[0_18px_50px_-12px_rgba(0,0,0,0.35)] ring-1 ring-black/5"
           >
             <Image
-              src="/kaveri.webp"
+              src="/kaveri-bw.webp"
               alt="Kaveri Sharma"
               width={440}
               height={548}

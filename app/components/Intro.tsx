@@ -80,7 +80,6 @@ export default function Intro() {
           <div className="h-[380px]">
             <GraphArt />
           </div>
-          <p className="text-center text-xs text-neutral-400 -mt-2">psst, click the graph.</p>
         </div>
       </div>
 
