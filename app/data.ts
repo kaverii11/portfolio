@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Kaveri Sharma",
   location: "Bengaluru, Karnataka",
-  email: "kaveri05sharma@gmail.com",
+  email: "kaverisharma05@gmail.com",
   github: "https://github.com/kaverii11",
   linkedin: "https://www.linkedin.com/in/kaveri-sharma-aiml",
   taglines: [

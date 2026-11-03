@@ -42,7 +42,7 @@
 ## 📬 Contact
 **Name:** Kaveri Sharma
 
-**Email:** kaveri05sharma@gmail.com
+**Email:** kaverisharma05@gmail.com
 
 **GitHub:** kaverii11
 
