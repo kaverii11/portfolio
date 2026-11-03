@@ -75,8 +75,11 @@ export default function Intro() {
           </div>
         </div>
 
-        <div className="hidden md:block h-[380px]">
-          <GraphArt />
+        <div className="hidden md:block">
+          <div className="h-[380px]">
+            <GraphArt />
+          </div>
+          <p className="text-center text-xs text-neutral-400 -mt-2">psst, the big dots are my projects. click one.</p>
         </div>
       </div>
 

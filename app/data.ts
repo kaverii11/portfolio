@@ -299,5 +299,16 @@ export const featuredOrder: { title: string; metric: string; metricLabel: string
   { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught" },
   { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend" },
   { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)" },
-  { title: "OptiSolve", metric: "0 / 27", metricLabel: "wrong auto-replies on near-topic and off-topic questions" },
+  { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership" },
+];
+
+// Big dots in the hero graph: hover shows the name, click opens the repo.
+export const graphHubs = [
+  { label: "SEBI Agent", href: "https://github.com/kaverii11/Knowledge-Graph-Agent-" },
+  { label: "Aymora", href: "https://github.com/kaverii11/aymora" },
+  { label: "CityOS", href: "https://github.com/kaverii11/Spatial-Engine" },
+  { label: "OptiSolve", href: "https://github.com/kaverii11/optisolve-docs" },
+  { label: "BreakRadar", href: "https://github.com/kaverii11/BreakRadar" },
+  { label: "shoe-check", href: "https://github.com/kaverii11/shoe-check" },
+  { label: "AgriConnect", href: "https://github.com/kaverii11/Agriconnect" },
 ];
