@@ -22,7 +22,7 @@ const SIZES: Record<string, [number, number]> = {
   "/projects/sebi.webp": [1400, 1068],
   "/projects/aymora.webp": [1400, 807],
   "/projects/cityos.webp": [1400, 875],
-  "/projects/optisolve.webp": [1280, 700],
+  "/projects/optisolve-app.webp": [1400, 719],
   "/projects/breakradar.webp": [900, 468],
   "/projects/agriconnect.webp": [900, 460],
   "/projects/marine.webp": [900, 450],

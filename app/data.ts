@@ -299,7 +299,7 @@ export const featuredOrder: { title: string; metric: string; metricLabel: string
   { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught", image: "/projects/sebi.webp", caption: "The graph the agent built from 3 real SEBI circulars (Aug–Oct 2026)" },
   { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend", image: "/projects/aymora.webp", caption: "Live at aymora-web.onrender.com" },
   { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)", image: "/projects/cityos.webp", caption: "The planning dashboard on Bengaluru. Map © OpenStreetMap contributors" },
-  { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership", image: "/projects/optisolve.webp", caption: "From our SRiJAN pitch: how OptiSolve decides who answers" },
+  { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership", image: "/projects/optisolve-app.webp", caption: "The agent inbox: the AI drafted a reply at 0.72 confidence (Tier 2), so an agent reviews it before it's sent" },
 ];
 
 
