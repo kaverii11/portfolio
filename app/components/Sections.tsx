@@ -45,7 +45,7 @@ function RepoLink({ href, isPrivate }: { href: string; isPrivate?: boolean }) {
       </span>
     );
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm text-neutral-900 hover:text-[#E07A5F] transition-colors">
+    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm text-neutral-900 hover:text-[#2563EB] transition-colors">
       GitHub <ArrowUpRight size={15} />
     </a>
   );
@@ -227,14 +227,14 @@ export function SiteFooter() {
       <p className="mt-4 text-[15px] text-neutral-500 max-w-lg">
         I&apos;m looking for a Jan–Jun 2027 internship in AI or software engineering, in Bengaluru or remote.
         The fastest way to reach me is{" "}
-        <a href={`mailto:${personalInfo.email}`} className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[#E07A5F]">
+        <a href={`mailto:${personalInfo.email}`} className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[#2563EB]">
           {personalInfo.email}
         </a>
         .
       </p>
       <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
         {links.map((l) => (
-          <a key={l.label} href={l.href} target={l.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer" className="inline-flex items-center gap-1 text-neutral-700 hover:text-[#E07A5F] transition-colors">
+          <a key={l.label} href={l.href} target={l.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer" className="inline-flex items-center gap-1 text-neutral-700 hover:text-[#2563EB] transition-colors">
             {l.label} <ArrowUpRight size={14} />
           </a>
         ))}

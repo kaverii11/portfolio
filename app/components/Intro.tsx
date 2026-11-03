@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowDown, FileText, Github, Linkedin, Mail, RotateCw } from "lucide-react";
 import { heroFacts, personalInfo } from "../data";
 import GraphArt from "./GraphArt";
+import NameReveal from "./NameReveal";
 
 const icons = [
   { href: personalInfo.github, label: "GitHub", Icon: Github },
@@ -22,7 +23,7 @@ export default function Intro() {
       <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 items-center">
         <div>
           <h1 className="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-neutral-900">
-            Hey, I&apos;m Kaveri.
+            Hey, I&apos;m <NameReveal>Kaveri</NameReveal>.
           </h1>
 
           <div className="mt-6 min-h-[4.5rem] text-xl md:text-[1.4rem] leading-snug text-neutral-500">
@@ -36,7 +37,7 @@ export default function Intro() {
               >
                 {fact.text}
                 {fact.link && (
-                  <a href={fact.link.href} target="_blank" rel="noreferrer" className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[#E07A5F]">
+                  <a href={fact.link.href} target="_blank" rel="noreferrer" className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[#2563EB]">
                     {fact.link.label}
                   </a>
                 )}
@@ -51,7 +52,7 @@ export default function Intro() {
 
           <div className="mt-7 flex items-center gap-5">
             {icons.map(({ href, label, Icon }) => (
-              <a key={label} href={href} target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined} rel="noreferrer" aria-label={label} title={label} className="text-neutral-800 hover:text-[#E07A5F] transition-colors">
+              <a key={label} href={href} target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined} rel="noreferrer" aria-label={label} title={label} className="text-neutral-800 hover:text-[#2563EB] transition-colors">
                 <Icon size={22} strokeWidth={1.7} />
               </a>
             ))}
@@ -79,7 +80,7 @@ export default function Intro() {
           <div className="h-[380px]">
             <GraphArt />
           </div>
-          <p className="text-center text-xs text-neutral-400 -mt-2">psst, the big dots are my projects. click one.</p>
+          <p className="text-center text-xs text-neutral-400 -mt-2">psst, click the graph.</p>
         </div>
       </div>
 
