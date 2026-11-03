@@ -217,6 +217,14 @@ export const moreProjects = [
     link: "https://github.com/kaverii11/Student-Alumni-Mentorship-Portal",
   },
   {
+    title: "AgriConnect",
+    tag: "Java · OOP & Design Patterns",
+    description:
+      "A farm-to-consumer marketplace: farmers sell produce directly to buyers, who can order together for bulk discounts or subscribe to weekly boxes. Java Spring Boot backend with 22 REST endpoints and MySQL, built on SOLID principles with Strategy (pricing rules), Observer (group-order alerts), Factory (subscription boxes) and Facade (checkout as one all-or-nothing transaction).",
+    tech: ["Java 17", "Spring Boot", "JPA/Hibernate", "MySQL", "Maven"],
+    link: "https://github.com/kaverii11/Agriconnect",
+  },
+  {
     title: "CRM Platform",
     tag: "Software Engineering",
     description:
