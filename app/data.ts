@@ -111,13 +111,13 @@ export const featuredProjects = [
     tag: "Agentic AI · Document AI",
     color: "blue",
     description:
-      "Turns unstructured SEBI regulatory circulars into a Neo4j knowledge graph of circulars, clauses, and the acts and regulations they reference or modify — then answers compliance questions in plain English.",
+      "Turns unstructured SEBI regulatory circulars into a Neo4j knowledge graph of circulars and the acts, regulations and circulars they reference or modify — then answers compliance questions in plain English, for people or for other AI agents over MCP.",
     points: [
-      "LangGraph pipeline: a regex catches standard circular IDs, GPT-4o-mini extracts the rest as Pydantic-validated structured output, and a validation step re-routes anything below 0.7 confidence to GPT-4o.",
-      "Chunks PDFs by their own clause structure with surrounding context; scanned PDFs are rendered to images and read by GPT-4o vision.",
-      "Text-to-Cypher Q&A that injects the live graph inventory into the prompt and runs only read-only queries; duplicate entities are merged by embedding cosine similarity; precision/recall/F1 eval script.",
+      "LangGraph pipeline: a regex catches circular numbers (old and new SEBI formats), a fast LLM extracts the rest as Pydantic-validated structured output, and anything below 0.7 confidence is re-checked by a stronger model.",
+      "MCP server with 6 read-only tools (validated inputs, parameterised queries, write queries blocked twice) so Claude or any agent can query the graph; MLflow tracing of every graph step, LLM call and tool call.",
+      "Evals on 3 real 2026 circulars: a hand-labelled answer key, an LLM-as-a-judge Q&A eval and a tool-selection eval, gated by pytest. Fixing what they caught (context leaks, page bugs, duplicate entities) raised extraction F1 from 0.74 to 0.94; 88% of test questions answered correctly.",
     ],
-    tech: ["Python", "LangGraph", "OpenAI", "Neo4j", "Streamlit"],
+    tech: ["Python", "LangGraph", "MCP", "MLflow", "Neo4j", "Docker"],
     link: "https://github.com/kaverii11/Knowledge-Graph-Agent-",
     private: false,
     badge: "Built solo, end-to-end",
@@ -176,6 +176,14 @@ export const featuredProjects = [
 ];
 
 export const moreProjects = [
+  {
+    title: "shoe-check",
+    tag: "Computer Vision · Edge AI",
+    description:
+      "Flags blurry or out-of-focus sneaker photos. A MobileNetV3-Small trained only on synthetic blur scored 95.6% on 1,050 real camera photos and 96.7% on 30 real sneaker photos, vs 89% for classic OpenCV sharpness scores. Exported to ONNX: 3.1 MB, 5 ms per photo on one CPU thread.",
+    tech: ["PyTorch", "OpenCV", "ONNX", "Gradio"],
+    link: "https://github.com/kaverii11/shoe-check",
+  },
   {
     title: "Marine Debris Detection",
     tag: "Deep Learning · Satellite Imagery",
