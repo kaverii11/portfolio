@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUpRight, Award, Lock, Trophy } from "lucide-react";
 import {
   achievements,
@@ -7,6 +8,7 @@ import {
   featuredOrder,
   featuredProjects,
   leadership,
+  moreImages,
   moreProjects,
   personalInfo,
   resumeGame,
@@ -14,6 +16,26 @@ import {
 } from "../data";
 import Collapse from "./Collapse";
 import Reveal from "./Reveal";
+
+// Pixel sizes of the screenshots in /public/projects (for layout without jumps)
+const SIZES: Record<string, [number, number]> = {
+  "/projects/sebi.webp": [1400, 1068],
+  "/projects/aymora.webp": [1400, 807],
+  "/projects/cityos.webp": [1400, 875],
+  "/projects/optisolve.webp": [1280, 700],
+  "/projects/breakradar.webp": [900, 468],
+  "/projects/agriconnect.webp": [900, 460],
+  "/projects/marine.webp": [900, 450],
+};
+
+function Shot({ src, alt, sizes }: { src: string; alt: string; sizes: string }) {
+  const [w, h] = SIZES[src];
+  return (
+    <a href={src} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-lg ring-1 ring-black/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)] bg-white">
+      <Image src={src} alt={alt} width={w} height={h} sizes={sizes} className="block w-full h-auto transition-transform duration-500 hover:scale-[1.02]" />
+    </a>
+  );
+}
 
 function Heading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -117,18 +139,20 @@ export function Projects() {
       <div className="space-y-16">
         {featured.map((p) => (
           <Reveal key={p.title}>
-            <article className="grid md:grid-cols-[1fr_1.25fr] gap-6 md:gap-10">
-              <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-7 flex flex-col justify-between min-h-[190px]">
-                <p className="text-xs uppercase tracking-[0.14em] text-neutral-400">{p.tag}</p>
-                <div>
-                  <p className="text-4xl md:text-[2.6rem] font-semibold tracking-[-0.03em] text-neutral-900">{p.metric}</p>
-                  <p className="mt-2 text-sm text-neutral-500 max-w-[16rem]">{p.metricLabel}</p>
-                </div>
-              </div>
+            <article className="grid md:grid-cols-[1.1fr_1fr] gap-6 md:gap-10 items-start">
+              <figure className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 md:p-5">
+                <Shot src={p.image} alt={`${p.title} screenshot`} sizes="(min-width: 768px) 460px, 100vw" />
+                <figcaption className="mt-3 text-xs text-neutral-400">{p.caption}</figcaption>
+              </figure>
               <div>
+                <p className="text-xs uppercase tracking-[0.14em] text-neutral-400">{p.tag}</p>
+                <h3 className="mt-2 text-xl text-neutral-900">{p.title}</h3>
                 <p className="text-sm text-neutral-500">{p.subtitle}</p>
-                <h3 className="mt-1 text-xl text-neutral-900">{p.title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-neutral-800">{p.description}</p>
+                <p className="mt-4 flex items-baseline gap-3">
+                  <span className="text-2xl font-semibold tracking-[-0.02em] text-neutral-900 whitespace-nowrap">{p.metric}</span>
+                  <span className="text-sm text-neutral-500">{p.metricLabel}</span>
+                </p>
                 {p.badge && <p className="mt-3 text-sm text-neutral-500">{p.badge.replace(/^🏆\s*/, "")}</p>}
                 <Tags items={p.tech} />
                 <div className="mt-4">
@@ -145,8 +169,23 @@ export function Projects() {
         count={rest.length}
         summary={rest.slice(0, 5).map((p) => p.title).join(", ") + ", and more"}
       >
-        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8 pt-2">
-          {rest.map((p) => (
+        {/* Projects with a screenshot get their own row, so the text-only cards below line up */}
+        <div className="grid sm:grid-cols-3 gap-x-6 gap-y-8 pt-2 items-start">
+          {rest.filter((p) => moreImages[p.title]).map((p) => (
+            <div key={p.title}>
+              <Shot src={moreImages[p.title]} alt={`${p.title} screenshot`} sizes="(min-width: 640px) 270px, 100vw" />
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-neutral-400">{p.tag}</p>
+              <h3 className="mt-1 text-neutral-900">{p.title}</h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-neutral-700">{p.description}</p>
+              <Tags items={p.tech} />
+              <div className="mt-3">
+                <RepoLink href={p.link} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 pt-8 border-t border-neutral-200 grid sm:grid-cols-2 gap-x-8 gap-y-8">
+          {rest.filter((p) => !moreImages[p.title]).map((p) => (
             <div key={p.title}>
               <p className="text-xs uppercase tracking-[0.12em] text-neutral-400">{p.tag}</p>
               <h3 className="mt-1 text-neutral-900">{p.title}</h3>

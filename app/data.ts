@@ -295,10 +295,17 @@ export const heroFacts = [
 ];
 
 // Featured projects, in order, with the one number that sums each up.
-export const featuredOrder: { title: string; metric: string; metricLabel: string }[] = [
-  { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught" },
-  { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend" },
-  { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)" },
-  { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership" },
+export const featuredOrder: { title: string; metric: string; metricLabel: string; image: string; caption: string }[] = [
+  { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught", image: "/projects/sebi.webp", caption: "The graph the agent built from 3 real SEBI circulars (Aug–Oct 2026)" },
+  { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend", image: "/projects/aymora.webp", caption: "Live at aymora-web.onrender.com" },
+  { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)", image: "/projects/cityos.webp", caption: "The planning dashboard on Bengaluru. Map © OpenStreetMap contributors" },
+  { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership", image: "/projects/optisolve.webp", caption: "From our SRiJAN pitch: how OptiSolve decides who answers" },
 ];
 
+
+// Screenshots for the "More projects" panel (taken from each repo's README)
+export const moreImages: Record<string, string> = {
+  BreakRadar: "/projects/breakradar.webp",
+  AgriConnect: "/projects/agriconnect.webp",
+  "Marine Debris Detection": "/projects/marine.webp",
+};
