@@ -123,6 +123,23 @@ export const featuredProjects = [
     badge: "Built solo, end-to-end",
   },
   {
+    title: "Relay",
+    subtitle: "LLM Q&A Service Built for Rate Limits",
+    tag: "LLM Systems · Reliability",
+    color: "blue",
+    description:
+      "A Python service that answers engineers' questions about three research papers on a free-tier, rate-limited LLM API. Every claim is backed by a word-for-word quote and checked before it is sent; when the papers don't support an answer, it says so.",
+    points: [
+      "Pipeline: a small model rewrites the question, BM25 finds passages, a cross-encoder gate decides if there is anything to answer from, a large model drafts with quotes, then code and a second model check it. A failed check gets one redraft with feedback, then a safe \"couldn't verify\" reply.",
+      "Built for the API's real limits: rate limiters fed from response headers, a daily token budget per model, a deadline queue, a fallback ladder (cached answer, smaller model, honest busy reply), and an arrival check that turns a request away in ~1 ms.",
+      "Probed the API and found a hidden 7,000 input-tokens/min limit that binds before the advertised 8,000. Load-tested 5 traffic shapes against a mock LLM server calibrated on real calls; blind retries made overload worse.",
+    ],
+    tech: ["Python", "FastAPI", "httpx", "asyncio", "BM25", "Groq"],
+    link: "https://github.com/kaverii11/Relay",
+    private: false,
+    badge: "Built in 4 days, every number reproducible from the logs",
+  },
+  {
     title: "Aymora",
     subtitle: "AI Matchmaking App",
     tag: "Full Stack · Backend",
@@ -176,6 +193,14 @@ export const featuredProjects = [
 ];
 
 export const moreProjects = [
+  {
+    title: "CryptoVault SOC",
+    tag: "Security Operations · SIEM",
+    description:
+      "A small Security Operations Center lab around a mock crypto-exchange app. Every login, withdrawal and page view becomes a JSON security event sent to Wazuh and Graylog; 6 custom Wazuh rules raise alerts tagged with MITRE ATT&CK techniques; a simulator fires each attack plus a 4-stage ransomware kill chain; a SOAR console walks the analyst through containment and exports a PDF incident report.",
+    tech: ["Python", "Flask", "Wazuh", "Graylog", "Docker", "MITRE ATT&CK"],
+    link: "https://github.com/kaverii11/Cryptovault",
+  },
   {
     title: "shoe-check",
     tag: "Computer Vision · Edge AI",
@@ -297,6 +322,7 @@ export const heroFacts = [
 // Featured projects, in order, with the one number that sums each up.
 export const featuredOrder: { title: string; metric: string; metricLabel: string; image: string; caption: string }[] = [
   { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught", image: "/projects/sebi.webp", caption: "The graph the agent built from 3 real SEBI circulars (Aug–Oct 2026)" },
+  { title: "Relay", metric: "7,000", metricLabel: "input tokens/min: the hidden rate limit found by probing the API, which the design is built around", image: "/projects/relay.webp", caption: "The answer pipeline and the reliability layer around every model call" },
   { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend", image: "/projects/aymora.webp", caption: "Live at aymora-web.onrender.com" },
   { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)", image: "/projects/cityos.webp", caption: "The planning dashboard on Bengaluru. Map © OpenStreetMap contributors" },
   { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership", image: "/projects/optisolve-app.webp", caption: "The agent inbox: the AI drafted a reply at 0.72 confidence (Tier 2), so an agent reviews it before it's sent" },
