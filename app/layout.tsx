@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kaveri Sharma",
   description:
-    "Kaveri Sharma, final-year CS student at PES University, Bengaluru. Builds AI agents and backends: SEBI knowledge-graph agent (MCP), Aymora, CityOS (2nd, AMD Slingshot), OptiSolve. Open to Jan-Jun 2027 internships.",
+    "Kaveri Sharma, final-year CS student at PES University, Bengaluru. Builds AI agents and backends: SEBI knowledge-graph agent (MCP), Relay, CityOS (2nd, AMD Slingshot), OptiSolve. Open to Jan-Jun 2027 internships.",
 };
 
 export default function RootLayout({

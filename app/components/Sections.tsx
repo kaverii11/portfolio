@@ -21,7 +21,6 @@ import Reveal from "./Reveal";
 const SIZES: Record<string, [number, number]> = {
   "/projects/sebi.webp": [1400, 1068],
   "/projects/relay.webp": [1400, 760],
-  "/projects/aymora.webp": [1400, 807],
   "/projects/cityos.webp": [1400, 875],
   "/projects/optisolve-app.webp": [1400, 719],
   "/projects/breakradar.webp": [900, 468],

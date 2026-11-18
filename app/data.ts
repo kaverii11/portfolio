@@ -140,23 +140,6 @@ export const featuredProjects = [
     badge: "Built in 4 days, every number reproducible from the logs",
   },
   {
-    title: "Aymora",
-    subtitle: "AI Matchmaking App",
-    tag: "Full Stack · Backend",
-    color: "orange",
-    description:
-      "A deployed AI matchmaking app: Gemini turns questionnaire answers into a structured profile and an embedding, and users are matched by vector similarity plus rule-based re-ranking.",
-    points: [
-      "TypeScript/Fastify backend with 12 SQL migrations and Zod validation; truncated the 3072-dim (Matryoshka) Gemini embeddings to 768 to fit pgvector's ivfflat index limit.",
-      "Two-stage matching — pgvector cosine-similarity candidates, then rule-based re-ranking — run as BullMQ background jobs on Redis with retries and exponential backoff.",
-      "Razorpay payments with HMAC-SHA256 webhook signature verification, rate limiting, OTP attempt limits, moderation, and data deletion; deployed on Render + Supabase.",
-    ],
-    tech: ["TypeScript", "Fastify", "PostgreSQL", "pgvector", "Redis", "Gemini"],
-    link: "https://github.com/kaverii11/aymora",
-    private: false,
-    badge: "Built solo, deployed",
-  },
-  {
     title: "BreakRadar",
     subtitle: "Trade-Break Reconciliation Engine",
     tag: "Agentic Systems · FinTech",
@@ -323,7 +306,6 @@ export const heroFacts = [
 export const featuredOrder: { title: string; metric: string; metricLabel: string; image: string; caption: string }[] = [
   { title: "SEBI Knowledge Graph Agent", metric: "0.74 → 0.94", metricLabel: "extraction F1 after building evals and fixing what they caught", image: "/projects/sebi.webp", caption: "The graph the agent built from 3 real SEBI circulars (Aug–Oct 2026)" },
   { title: "Relay", metric: "7,000", metricLabel: "input tokens/min: the hidden rate limit found by probing the API, which the design is built around", image: "/projects/relay.webp", caption: "The answer pipeline and the reliability layer around every model call" },
-  { title: "Aymora", metric: "5", metricLabel: "services wired into one deployed TypeScript backend", image: "/projects/aymora.webp", caption: "Live at aymora-web.onrender.com" },
   { title: "CityOS", metric: "2nd", metricLabel: "nationally, out of 40,000+ registrations (AMD Slingshot)", image: "/projects/cityos.webp", caption: "The planning dashboard on Bengaluru. Map © OpenStreetMap contributors" },
   { title: "OptiSolve", metric: "Top 5", metricLabel: "finalist at the Atos SRiJAN Hackathon, pitched to Atos leadership", image: "/projects/optisolve-app.webp", caption: "The agent inbox: the AI drafted a reply at 0.72 confidence (Tier 2), so an agent reviews it before it's sent" },
 ];
